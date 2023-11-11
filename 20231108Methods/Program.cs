@@ -4,24 +4,44 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Which method do you want to select?");
-            Console.WriteLine("1 - PositiveZeroNegative");
-            Console.WriteLine("2 - ConvertToFahrenheit");
-            Console.WriteLine("3 - NumberTriangle");
-            string input = Console.ReadLine();
-            switch(input)
+            string answer = "";
+            do
             {
-                case "1":
-                    Console.WriteLine("Give a number");
-                    double number = Convert.ToDouble(Console.ReadLine());
-                    PositiveZeroNegative(number);
-                    break;
-                case "2":
-                    Console.WriteLine("Give a number");
-                    double degreesCelsius = Convert.ToDouble(Console.ReadLine());
-                    ConvertToFahrenheit(degreesCelsius);
-                    break;
-            }
+                Console.WriteLine("Which method do you want to select?");
+                Console.WriteLine("1 - PositiveZeroNegative");
+                Console.WriteLine("2 - ConvertToFahrenheit");
+                Console.WriteLine("3 - NumberTriangle");
+                int input = Convert.ToInt32(Console.ReadLine());
+                switch(input)
+                {
+                    case 1:
+                        Console.WriteLine("Give a number");
+                        double number = Convert.ToDouble(Console.ReadLine());
+                        PositiveZeroNegative(number);
+                        Answer();
+                        input = Convert.ToInt32(Console.ReadLine());
+                        break;
+                    case 2:
+                        Console.WriteLine("Give a number");
+                        double degreesCelsius = Convert.ToDouble(Console.ReadLine());
+                        ConvertToFahrenheit(degreesCelsius);
+                        Answer();
+                        input = Convert.ToInt32(Console.ReadLine());
+                        break;
+                    case 3:
+                        Console.WriteLine("Give a number");
+                        int maximumNumber = Convert.ToInt32(Console.ReadLine());
+                        NumberTriangle(maximumNumber);
+                        Answer();
+                        input = Convert.ToInt32(Console.ReadLine());
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input");
+                        Answer();
+                        input = Convert.ToInt32(Console.ReadLine());
+                        break;
+                }
+            } while (answer.ToLower() != "no");
         }
         static string PositiveZeroNegative(double number)
         {
@@ -49,5 +69,6 @@
                 Console.WriteLine();
             }
         }
+        static string Answer() => "Do you want to restart the program?";
     }
 }
