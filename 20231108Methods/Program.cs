@@ -59,20 +59,28 @@
         static double ConvertToFahrenheit(double celsius) => celsius * 9 / 5 + 32;
         static void NumberTriangle(int maximumNumber)
         {
+            //The loop is active while i is smaller and equal to maximumNumber.
             for (int i = 1; i <= maximumNumber; i++)
             {
+                //The loop is active while j is smaller and equal to i.
                 for (int j = 1; j <= i; j++)
                 {
+                    //Write j.
                     Console.Write(j);
                 }
+                //An empty Console.WriteLine() meant as an enter.
                 Console.WriteLine();
             }
+            //The loop is active while i is larger then maximumNumber.
             for (int i = maximumNumber - 1; i > 0; i--)
             {
+                //The loop is active while j is smaller and equal to i.
                 for (int j = 1; j <= i; j++)
                 {
+                    //Write j.
                     Console.Write(j);
                 }
+                //An empty Console.WriteLine() meant as an enter.
                 Console.WriteLine();
             }
         }
