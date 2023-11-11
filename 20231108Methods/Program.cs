@@ -4,14 +4,20 @@
     {
         static void Main(string[] args)
         {
+            //Variable for the answer to the question if they want to repeat the loop.
             string answer = "";
+
+            //Loop to repeat the program.
             do
             {
+                //Asking the user which method they want to use.
                 Console.WriteLine("Which method do you want to select?");
                 Console.WriteLine("1 - PositiveZeroNegative");
                 Console.WriteLine("2 - ConvertToFahrenheit");
                 Console.WriteLine("3 - NumberTriangle");
                 int input = Convert.ToInt32(Console.ReadLine());
+
+                //Selecting the right method
                 switch(input)
                 {
                     case 1:
@@ -41,6 +47,7 @@
                         input = Convert.ToInt32(Console.ReadLine());
                         break;
                 }
+                //If answer is no repeat the loop.
             } while (answer.ToLower() != "no");
         }
         static string PositiveZeroNegative(double number)
